@@ -49,7 +49,7 @@
 - [tiscon6-startup-guide](https://github.com/tiscon/tiscon6-startup-guide)
 
 ## アプリケーションを起動する
-- [自分のPCでアプリを動かす](https://github.com/tiscon/tiscon6-startup-guide/blob/master/content/operationCheckWin.md)
+- [自分のPCでアプリを動かす](https://github.com/tiscon/tiscon6-startup-guide/blob/master/content/operationCheck.md)
 
 # 参考
 
