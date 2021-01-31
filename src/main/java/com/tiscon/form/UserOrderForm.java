@@ -25,6 +25,9 @@ public class UserOrderForm {
     private String email;
 
     @NotBlank
+    private String date;
+
+    @NotBlank
     private String oldPrefectureId;
 
     @NotBlank
@@ -77,6 +80,14 @@ public class UserOrderForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    //追加
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getOldPrefectureId() {

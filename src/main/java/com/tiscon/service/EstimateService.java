@@ -7,6 +7,7 @@ import com.tiscon.domain.Customer;
 import com.tiscon.domain.CustomerOptionService;
 import com.tiscon.domain.CustomerPackage;
 import com.tiscon.dto.UserOrderDto;
+import com.tiscon.form.UserOrderForm;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,8 @@ public class EstimateService {
     private static final int PRICE_PER_DISTANCE = 100;
 
     private final EstimateDao estimateDAO;
-
+    /**追加**/
+    /*private UserOrderForm userOrderForm;
     /**
      * コンストラクタ。
      *
@@ -92,8 +94,23 @@ public class EstimateService {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
 
-        return priceForDistance + pricePerTruck + priceForOptionalService;
+        // 季節係数を考慮
+        int month = Integer.parseInt(dto.getDate().substring(5,7));
+
+        double N;
+        if(month == 3 || month==4){
+            N = 1.5;
+        }
+        else if(month == 9){
+            N = 1.2;
+        }
+        else{
+            N = 1.0;
+        }
+
+        return (int)((priceForDistance + pricePerTruck) * N) + priceForOptionalService;
     }
+
 
     /**
      * 荷物当たりの段ボール数を算出する。
