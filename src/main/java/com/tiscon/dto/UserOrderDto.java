@@ -7,6 +7,8 @@ public class UserOrderDto {
     private String tel;
 
     private String email;
+    //追加
+    private String date;
 
     private String oldPrefectureId;
 
@@ -48,6 +50,14 @@ public class UserOrderDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    //追加
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getOldPrefectureId() {

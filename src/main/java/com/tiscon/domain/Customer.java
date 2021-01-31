@@ -15,6 +15,8 @@ public class Customer implements Serializable {
     private String tel;
 
     private String email;
+    //追加
+    private String date;
 
     private String oldAddress;
 
@@ -66,6 +68,14 @@ public class Customer implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    //追加
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getOldAddress() {
